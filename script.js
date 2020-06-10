@@ -1,4 +1,3 @@
-
 var prizes_config = {
     count:12,
     prize_names : ["3000 Credits", "35% Off", "Hard Luck", "70% OFF", "Swagpack", "100% OFF", "Netflix Subscription", "50% Off", "Amazon Voucher", "2 Extra Spin", "CB Tshirt", "CB Book" ]
@@ -37,7 +36,7 @@ function preload()
 function create ()
 {
 
-    let x = 230
+    let x = 235
     let W = game.config.width;
     let H = game.config.height;
 
@@ -55,7 +54,7 @@ function create ()
     this.spining = this.sound.add('spining');
 
     let back = this.add.sprite(W/2+x, H/2+50,'background');
-    this.back = back.setScale(0.30);
+    this.back = back.setScale(0.33);
 
     let wheel = this.add.sprite(W/2+x, H/2+50,'wheel');
     this.wheel = wheel.setScale(0.15);
