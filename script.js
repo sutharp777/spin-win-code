@@ -29,7 +29,6 @@ function preload()
     this.load.image('wheel',"./Assets/wheel.png");
     this.load.image('pin',"./Assets/pin.png");
     this.load.image('button',"./Assets/btn.png");
-    // this.load.image('cover',"./Assets/cover.png");
     this.load.image('gift',"./Assets/gifts.png");
     this.load.image('title',"./Assets/spin-n-win.png");
     this.load.audio('spining',["./Assets/sound/spining.ogg", "./Assets/sound/spining.ogg"]);
@@ -74,9 +73,6 @@ function create ()
     back.depth = -2;
     stand.depth=-1;
 
-    // let cover = this.add.sprite(204, H-102,'cover');
-    // this.cover = cover.setScale(.71);
-
     let gift = this.add.sprite(300, H/2,'gift').setInteractive();
     this.gift = gift.setScale(.30);
 
@@ -99,7 +95,6 @@ function create ()
         // button.setInteractive();
         // button.setVisible(true);
         title.setVisible(true);
-        // cover.setVisible(true);
         gift.setVisible(false);
         // game_text.setVisible(false);
 
@@ -108,12 +103,8 @@ function create ()
     button.on('pointerdown', function (pointer){
 
         this.setTint(0xff00ff);
-
-        // button.disableInteractive();
         if(ref.stateOfWheel=='rest'){
             ref.stateOfWheel = 'move';
-            // button.setVisible(false);
-            // cover.setVisible(false);
             spinwheel(ref);
         }
 
@@ -138,7 +129,7 @@ function reset(){
 
     ref.game_text.setText("You Got " + prizes_config.prize_names[ref.idx]);
     ref.game_text.setVisible(true);
-    return;
+
 }
 
 function update ()
